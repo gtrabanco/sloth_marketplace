@@ -8,6 +8,8 @@ THIS REPOSITORY IS JUST FOR TESTING POURPOSE SO DO NOT SEND PR UNLESS YOU HAVE C
 * self
 * dotly
 * scripts
+* context
+* script
 
 This context are absolute reserved to core team
 

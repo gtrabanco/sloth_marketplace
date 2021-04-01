@@ -7,6 +7,7 @@ THIS REPOSITORY IS JUST FOR TESTING POURPOSE SO DO NOT SEND PR UNLESS YOU HAVE C
 * core
 * self
 * dotly
+* script
 * scripts
 * context
 * script

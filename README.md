@@ -71,6 +71,8 @@ if ! {
 fi
 ```
 
+In comparisons use of `[[` is preferred over `[`.
+
 Follow all possible shellcheck recommendations is very recommended but we know that sometimes shellcheck fails.
 
 ### 2. Additional Libraries

@@ -18,6 +18,10 @@ This context are absolute reserved to core team. It is considered good practice 
 * self
 * symlinks
 
+This script names are reserved
+* init/enable
+* init/disable
+
 The `git` and `shell` are not considered a dotly core scripts. But this must be discussed.
 
 ## How to add a command

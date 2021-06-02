@@ -40,7 +40,7 @@ Anyway remember that is a good practice use tags in title like:
 ### 1. Code
 
 #### Shebang
-Shebang should be defined with `#!/usr/bin/env` to load the user desired version of a shell (see (Stackoverflow)[])
+Shebang should be defined with `#!/usr/bin/env` to load the user desired version of a shell (see (Stackoverflow)[https://unix.stackexchange.com/questions/29608/why-is-it-better-to-use-usr-bin-env-name-instead-of-path-to-name-as-my])
 
 #### Set Options
 It is recommended to use:

@@ -38,14 +38,24 @@ Anyway remember that is a good practice use tags in title like:
 ## Scripts Requirements
 
 ### 1. Code
-All scripts must provide default values for arguments or fail if a variable is not set.
 
+#### Shebang
+Shebang should be defined with `#!/usr/bin/env` to load the user desired version of a shell (see (Stackoverflow)[])
+
+#### Set Options
 It is recommended to use:
 
 ```bash
 set +euo pipefail
 ```
 
+#### Bash variables
+All scripts must provide default values for arguments or fail if a variable is not set.
+
+#### Blocks
+All code blocks should have a tab
+
+#### Error handling
 Every script should handle all possible errors.
 
 Explicit way of doing something is always preferred than non explicit way. Example:
@@ -66,14 +76,20 @@ if ! {
     conditional_command_that_not_output &&\
     anotherconditional_command_that_not_output &&\
     end_conditional_command_that_not_output
-}; then
+}
+then
   error_command
 fi
 ```
 
+Multiline conditionals should have `then` in a new line at the same level of the if.
+
 In comparisons use of `[[` is preferred over `[`.
 
-Follow all possible shellcheck recommendations is very recommended but we know that sometimes shellcheck fails.
+#### Other
+- Al identation is two spaces
+- Code blocks should have a tab
+- Follow all possible shellcheck recommendations is very recommended but we know that sometimes shellcheck fails.
 
 ### 2. Additional Libraries
 

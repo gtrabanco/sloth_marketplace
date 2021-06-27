@@ -4,11 +4,10 @@ set -euo pipefail
 
 source "$DOTLY_PATH/scripts/core/_main.sh"
 
-##? Tail json logs
-#?? 1.0.0
+##? List contributors with number of commits
 ##?
 ##? Usage:
-##?   tail_json <filename>  Accept wildcards
+##?   contributors
 docs::parse "$@"
 
-tail -f $1 | egrep -v "$2" | jq
+git shortlog --summary --numbered

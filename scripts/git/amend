@@ -4,11 +4,11 @@ set -euo pipefail
 
 source "$DOTLY_PATH/scripts/core/_main.sh"
 
-##? List JDKs
-#?? 1.0.0
+##? Add all files and then executes an amend
 ##?
 ##? Usage:
-##?   list_jdks
+##?   amend
 docs::parse "$@"
 
-ls /Library/Java/JavaVirtualMachines
+git add -A
+git commit --amend

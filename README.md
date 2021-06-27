@@ -8,8 +8,10 @@ THIS REPOSITORY IS JUST FOR TESTING POURPOSE SO DO NOT SEND PR UNLESS YOU HAVE C
 * self
 * script
 * scripts
+* sloth
 * dotly
 * context
+* marketplace
 
 This context are absolute reserved to core team. It is considered good practice not to reuse a dotly core context:
 * core
@@ -82,7 +84,7 @@ then
 fi
 ```
 
-Multiline conditionals should have `then` in a new line at the same level of the if.
+Multiple conditionals should have `then` in a new line at the same level of the if.
 
 In comparisons use of `[[` is preferred over `[`.
 
@@ -97,7 +99,7 @@ Additional libraries should be in src subdir which would be downloaded all src f
 
 ### 3. Installation scripts
 
-If any context provide any functionality that must change something in the user dotfiles, provide a script to do it automatically after installing the context or script is required. You can require user iteraction but a wizard or script is mandatory.
+If any context provide any functionality that must change something in the user dotfiles, provide a script to do it automatically or wizard for use guidance is required. The script must also check if this migration has happened. 
 
 It is also mandatory provide a script to uninstall and undo changes.
 
@@ -105,30 +107,26 @@ To do this the install script must be in the context folder in 'src/<name>/insta
 
 If a installation script is requires for full context name is the context folder if it is just for a script it is the script name. It is not recommended to name a script with the same name as the context.
 
-Use `dot::get_script_src_path` to include libraries and be explicit in second param if you want a core library. If you want to requre `output.sh` library from core dotly library require it as:
+Use `dot::load_library` to include libraries and be explicit in second param if you want a core library or library from another context. Example, if you want to requre `output.sh` library from core dotly library require it as:
 
 ```bash
-dot::get_script_src_path "output.sh" "core"
+dot::load_library "output.sh" "core"
 ```
 
-Include file extension always, we know that without extension will work but is preferred is this work in the first conditional and loop iteraction.
+Include file extension always, we know that without extension will work but is preferred if this work in the first conditional and loop iteraction (see <a href="https://github.com/gtrabanco/sloth/blob/master/scripts/core/dot.sh" target="_blank" alt="dot library code">dot.sh file code</a>).
 
 #### 4. Dotbot installation yaml file
 
 Any call to a dotbot file must be in the un/installation of the script and yaml files must be in `src/symlinks` subfolder.
 
-## Feature: Create commands with dotly
+## Feature: Create commands from terminal
 WARNING: THIS WAY OF CREATING COMMANDS IS PENDING APPROVAL
 
 ```bash
-dot dotly create --path "/to/my/dev/path" <context> <command> <description>
+lazy script create <context> <command> <description>
 ```
 
-<!--
-WARNING: TYPESCRIPT COMMANDS IS A DEVELOPMENT FEATURE AND IS NOT AVAILABLE
-If you prefer to create a Typescript command:
-
+If you develop in a diferent path than your dotfiles you can provide a custom path
 ```bash
-dot dotly create --typescript --path "/to/my/dev/path" <context> <command> <description>
+lazy script create --path "/to/my/dev/path" <context> <command> <description>
 ```
--->

@@ -9,28 +9,25 @@ THIS REPOSITORY IS JUST FOR TESTING POURPOSE SO DO NOT SEND PR UNLESS YOU HAVE C
 * script
 * scripts
 * sloth
-* dotly
 * context
 * marketplace
-
-This context are absolute reserved to core team. It is considered good practice not to reuse a dotly core context:
-* core
 * dotfiles
 * package
-* self
 * symlinks
+* init
+* shell/zsh (only `zsh` script because it is necessary in the core to reload completions when installing)
 
-This script names are reserved
-* init/enable
-* init/disable
+These context are absolute reserved to core team. It is considered good practice not to reuse a sloth core context if you do, maybe you are contributing to SLOTH core and not to the marketplace.
+
 
 The `git` and `shell` are not considered a dotly core scripts. But this must be discussed.
 
 ## How to add a command
 
 1. Fork & Clone this repository
-2. Create the new context and command if it does not exists or just modify one
-3. Test if the script works properly on your system, if you need help just add the tag "[HELP]" in the title. If it is a Work in progress just add "[WIP]" (even if you only need some testing or code checks). When its ready to approval just remove the tags.
+2. Create the new context and command if it does not exists or just modify one. You can import from your dotfiles by copying it.
+3. Test if the script works properly on your system first, if you need help just add the tag "[HELP]" in the title. If it is a Work in progress just add "[WIP]" (even if you only need some testing or code checks). When its ready to approval just remove the tags.
+4. Use the `sloth core lint` and `sloth core static_analysis` before set your PR as ready to review. CI Checks are required to approve your script.
 
 Anyway remember that is a good practice use tags in title like:
 * [Feature]

@@ -4,18 +4,20 @@ THIS REPOSITORY IS JUST FOR TESTING POURPOSE SO DO NOT SEND PR UNLESS YOU HAVE C
 
 
 ## Not allowed context names
+* autoupdate
 * core
-* self
-* script
-* scripts
-* sloth
 * context
 * marketplace
-* dotfiles
 * package
+* script
+* scripts
+* self
+* self-update
+* sloth
 * symlinks
 * init
 * shell/zsh (only `zsh` script because it is necessary in the core to reload completions when installing)
+* dotfiles/create (only `create` script because it is necessary for creating dotfiles at first install)
 
 These context are absolute reserved to core team. It is considered good practice not to reuse a sloth core context if you do, maybe you are contributing to SLOTH core and not to the marketplace.
 
